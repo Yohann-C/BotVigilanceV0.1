@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.config = {
-    "token": "NjQwMzkwNDEwNjc3NjQ5NDI3.Xb5M2A.D7YmvuATAknd2Mw0zll7uPu27qM",
+    "token": process.env.token,
     "prefix": "v!",
     "commands": [
         "testCommand",
