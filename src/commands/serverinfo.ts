@@ -22,7 +22,7 @@ export default class serverinfo implements IBotCommand {
             .setTitle("Informations du serveur")
             .setDescription("Bievenue sur le serveur, les droits de l'Homme sont pas toujours au top, mais stan clc")
             .addField("Nombre de membre :", `Le serveur a ${messageObject.guild.memberCount} membres`)
-            .setImage(messageObject.guild.iconURL)
+            .setImage('https://66.media.tumblr.com/3201aa9afc52d26c1277ef57451e8ec7/tumblr_pz5ylzmXSK1viv1xyo1_400.gif')
             .setFooter("Stan clc !");
 
         messageObject.channel.send(embed)
