@@ -14,7 +14,7 @@ loadCommands(`${__dirname}/commands`)
 client.on('ready', () => {
 
   console.log("Je suis connecté !") //message en ligne
-  client.user.setActivity("soulevage de daronne").catch(console.error) //activité
+  client.user.setActivity("Chasse des trésors").catch(console.error) //activité
   //let allUsers = client.users.array();
 
 })
@@ -25,8 +25,10 @@ client.on('ready', () => {
 client.on("message", (message) => {
 
   //igonore message du bot
-  if(message.author.bot)
-  {return;}
+  if (message.author.bot) { return; }
+
+  //empeche le bot de marcher en DM
+  if (message.channel.type == "dm") { return; }
 
   //comande ping
   if (message.content === "ping") {
@@ -39,8 +41,7 @@ client.on("message", (message) => {
   }
 
   //ignore messages qui commencent pas par prefix
-  if(!message.content.startsWith(ConfigFile.config.prefix))
-  {return;}
+  if (!message.content.startsWith(ConfigFile.config.prefix)) { return; }
 
   handleCommand(message);
 
@@ -58,35 +59,35 @@ client.on("message", (message) => {
 
 });
 
-async function handleCommand(message: Discord.Message){
+async function handleCommand(message: Discord.Message) {
   //enleve le prefix et garde la commande + arg
-  let command = message.content.split(" ")[0].replace(ConfigFile.config.prefix, "");
+  let command = message.content.split(" ")[0].replace(ConfigFile.config.prefix, "").toLocaleLowerCase();
   let args = message.content.split(" ").slice(1);
 
-  for(const commandsClass of commands){
+  for (const commandsClass of commands) {
 
-    try{
+    try {
 
-      if(!commandsClass.isThisCommand(command)){
-         continue;
+      if (!commandsClass.isThisCommand(command)) {
+        continue;
       }
 
       await commandsClass.runCommand(args, message, client);
     }
-    catch(exception){
+    catch (exception) {
 
       console.log(exception);
     }
   }
 }
 
-function loadCommands(commandsPath: string){
+function loadCommands(commandsPath: string) {
 
   //sort si pas de commandes
-  if(!ConfigFile.config || (ConfigFile.config.commands as string[]).length === 0) {return;}
-  
+  if (!ConfigFile.config || (ConfigFile.config.commands as string[]).length === 0) { return; }
+
   //boucle toute les commandes pour les charger
-  for(const commandName of ConfigFile.config.commands as string[]){
+  for (const commandName of ConfigFile.config.commands as string[]) {
 
     const commandsClass = require(`${commandsPath}/${commandName}`).default;
 

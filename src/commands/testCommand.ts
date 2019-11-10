@@ -1,9 +1,9 @@
 import * as Discord from "discord.js";
-import {IBotCommand} from "../api";
+import { IBotCommand } from "../api";
 
-export default class testCommand implements IBotCommand{
+export default class testcommand implements IBotCommand {
 
-    private readonly _command = "testCommand";
+    private readonly _command = "testcommand";
 
     help(): string {
         //le help de la commande
@@ -15,7 +15,7 @@ export default class testCommand implements IBotCommand{
         return command === this._command;
     }
 
-    runCommand(args: string[], messageObject: Discord.Message, client: Discord.Client): void {
+    async runCommand(args: string[], messageObject: Discord.Message, client: Discord.Client): Promise<void> {
         //si ça marche
         messageObject.channel.send("ça marche bien chacal");
     }

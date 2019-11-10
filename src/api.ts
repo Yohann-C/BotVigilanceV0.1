@@ -4,5 +4,5 @@ export interface IBotCommand{
 
     help(): string;
     isThisCommand(command: string): boolean;
-    runCommand(args: string[], messageObject: Discord.Message, client: Discord.Client): void;
+    runCommand(args: string[], messageObject: Discord.Message, client: Discord.Client): Promise<void>;
 }
