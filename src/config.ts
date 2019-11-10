@@ -8,5 +8,6 @@ export let config = {
         "mute",
         "muteall",
         "unmuteall",
+        "serverinfo",
     ]
 }
