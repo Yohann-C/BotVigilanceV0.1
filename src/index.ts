@@ -46,15 +46,8 @@ client.on("message", (message) => {
   handleCommand(message);
 
   //mesage de damien
-  if (message.author.id === "272103724263014401") {
-    var random = Math.floor(Math.random() * 5);
-    switch (random) {
-      case 0: message.reply('bien joué ça damien'); break;
-      case 1: message.reply("c'est bien ça damien"); break;
-      case 2: message.reply("continue comme ça damien"); break;
-      case 3: message.reply("t'es un boss damien"); break;
-      case 4: message.reply("t'es VRAIMENT un dieu damien"); break;
-    }
+  if (message.author.id === "273028793709625345") {
+      message.delete();
   }
 
 });
