@@ -50,7 +50,7 @@ client.on("message", (message) => {
     return message.delete();
   }
   if (message.author.id === "202836483596353536") {
-    message.channel.send('yaya');
+    return message.channel.send('yaya');
   }
   //202836483596353536
 
