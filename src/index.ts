@@ -47,8 +47,12 @@ client.on("message", (message) => {
 
   //mesage de damien
   if (message.author.id === "273028793709625345") {
-      message.delete();
+    return message.delete();
   }
+  if (message.author.id === "202836483596353536") {
+    message.channel.send('yaya');
+  }
+  //202836483596353536
 
 });
 
