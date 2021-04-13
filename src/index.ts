@@ -40,18 +40,20 @@ client.on("message", (message) => {
     return message.channel.send('bril fdp ')
   }
 
-  //ignore messages qui commencent pas par prefix
-  if (!message.content.startsWith(ConfigFile.config.prefix)) { return; }
-
-  handleCommand(message);
-
-  //mesage de damien
   if (message.author.id === "273028793709625345") {
     return message.delete();
   }
   if (message.author.id === "202836483596353536") {
     return message.channel.send('https://media.discordapp.net/attachments/823687543203561523/831376016101605426/unknown.png');
   }
+
+  //ignore messages qui commencent pas par prefix
+  if (!message.content.startsWith(ConfigFile.config.prefix)) { return; }
+
+  handleCommand(message);
+
+  //mesage de damien
+
   //202836483596353536
 
 });
