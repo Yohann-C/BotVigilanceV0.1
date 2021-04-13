@@ -23,10 +23,17 @@ client.on('ready', () => {
 
 //fonction de message reçu
 client.on("message", (message) => {
-  console.log("message recus")
+  
 
   //igonore message du bot
   if (message.author.bot) { return; }
+
+  if (message.content == "ouitest"){
+    console.log("message recus")
+    message.reply('ouii')
+    message.channel.send('Ryuu <3')
+    return;
+  }
 
   
   if (message.author.id === '202836483596353536') {
