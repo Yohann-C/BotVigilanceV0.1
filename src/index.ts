@@ -23,13 +23,17 @@ client.on('ready', () => {
 
 //fonction de message reçu
 client.on("message", (message) => {
+  console.log("message recus")
 
   //igonore message du bot
   if (message.author.bot) { return; }
 
   
   if (message.author.id === '202836483596353536') {
-    return message.channel.send('Ryuu <3')
+    console.log("message yohann")
+    message.reply('ouii')
+    message.channel.send('Ryuu <3')
+    return;
     //message.channel.send('https://media.discordapp.net/attachments/823687543203561523/831376016101605426/unknown.png')
   }
 
