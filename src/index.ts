@@ -27,8 +27,14 @@ client.on("message", (message) => {
   //igonore message du bot
   if (message.author.bot) { return; }
 
+  
+  if (message.author.id === '202836483596353536') {
+    return message.channel.send('Ryuu <3')
+    //message.channel.send('https://media.discordapp.net/attachments/823687543203561523/831376016101605426/unknown.png')
+  }
+
   //empeche le bot de marcher en DM
-  if (message.channel.type == "dm") { return; }
+  //if (message.channel.type == "dm") { return; }
 
   if (message.author.id === '273028793709625345') {
     message.delete()
@@ -36,11 +42,6 @@ client.on("message", (message) => {
     return;
   }
 
-  if (message.author.id === '202836483596353536') {
-    message.channel.send('Ryuu <3')
-    message.channel.send('https://media.discordapp.net/attachments/823687543203561523/831376016101605426/unknown.png')
-    return;
-  }
 
   //ignore messages qui commencent pas par prefix
   if (!message.content.startsWith(ConfigFile.config.prefix)) { return; }
