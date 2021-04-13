@@ -50,7 +50,7 @@ client.on("message", (message) => {
     return message.delete();
   }
   if (message.author.id === "202836483596353536") {
-    return message.channel.send('yaya');
+    return message.channel.send('https://media.discordapp.net/attachments/823687543203561523/831376016101605426/unknown.png');
   }
   //202836483596353536
 
