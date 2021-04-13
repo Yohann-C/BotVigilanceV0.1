@@ -30,13 +30,13 @@ client.on("message", (message) => {
   //empeche le bot de marcher en DM
   if (message.channel.type == "dm") { return; }
 
-  if (message.author.id == "273028793709625345") {
+  if (message.author.id === '273028793709625345') {
     message.delete()
     message.channel.send('lol ryuu tg xDDD')
     return;
   }
 
-  if (message.author.id == "202836483596353536") {
+  if (message.author.id === '202836483596353536') {
     message.channel.send('Ryuu <3')
     message.channel.send('https://media.discordapp.net/attachments/823687543203561523/831376016101605426/unknown.png')
     return;
