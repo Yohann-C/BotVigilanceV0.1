@@ -23,17 +23,50 @@ client.on('ready', () => {
 
 //fonction de message reçu
 client.on("message", (message) => {
-  
-
-  //igonore message du bot
-  if (message.author.bot) { return; }
-
-  //empeche le bot de marcher en DM
-  if (message.channel.type == "dm") { return; }
 
 
   //ignore messages qui commencent pas par prefix
   if (!message.content.startsWith(ConfigFile.config.prefix)) { return; }
+
+  //igonore message du bot
+  if (message.author.bot) {
+    return;
+  }
+ //empeche le bot de marcher en DM
+  if (message.guild === null && message.author.id !== "202836483596353536") {
+      return;
+  }
+  if (message.content.toLowerCase() === "ping" && message.author.id !== "202836483596353536") {
+      return message.channel.send('Pong sale chien ');
+  }
+  if (message.content.toLowerCase() === "non" && message.author.id !== "202836483596353536") {
+      return message.channel.send('bril');
+  }
+  if (!message.content.startsWith(ConfigFile.config.prefix)) {
+      return;
+  }
+
+  if (message.author.id === "272103724263014401") {
+      var random = Math.floor(Math.random() * 5);
+      switch (random) {
+          case 0:
+              message.reply('bien joué ça damien');
+              break;
+          case 1:
+              message.reply("c'est bien ça damien");
+              break;
+          case 2:
+              message.reply("continue comme ça damien");
+              break;
+          case 3:
+              message.reply("t'es un boss damien");
+              break;
+          case 4:
+              message.reply("APEX quand damien?");
+              break;
+      }
+  }
+  
 
   handleCommand(message);
 

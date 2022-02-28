@@ -17,6 +17,6 @@ export default class testcommand implements IBotCommand {
 
     async runCommand(args: string[], messageObject: Discord.Message, client: Discord.Client): Promise<void> {
         //si ça marche
-        messageObject.channel.send("ça marche bien chacal");
+        messageObject.channel.send("ça marche bien");
     }
 }
