@@ -28,30 +28,8 @@ client.on("message", (message) => {
   //igonore message du bot
   if (message.author.bot) { return; }
 
-  if (message.content == "ouitest"){
-    console.log("message recus")
-    message.reply('ouii')
-    message.channel.send('Ryuu <3')
-    return;
-  }
-
-  
-  if (message.author.id === '202836483596353536') {
-    console.log("message yohann")
-    message.reply('ouii')
-    message.channel.send('Ryuu <3')
-    return;
-    //message.channel.send('https://media.discordapp.net/attachments/823687543203561523/831376016101605426/unknown.png')
-  }
-
   //empeche le bot de marcher en DM
-  //if (message.channel.type == "dm") { return; }
-
-  if (message.author.id === '273028793709625345') {
-    message.delete()
-    message.channel.send('lol ryuu tg xDDD')
-    return;
-  }
+  if (message.channel.type == "dm") { return; }
 
 
   //ignore messages qui commencent pas par prefix
@@ -59,9 +37,6 @@ client.on("message", (message) => {
 
   handleCommand(message);
 
-  //mesage de damien
-
-  //202836483596353536
 
 });
 

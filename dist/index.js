@@ -22,19 +22,19 @@ client.on("message", (message) => {
     if (message.author.bot) {
         return;
     }
-    if (message.channel.type == "dm") {
+    if (message.channel.type == "dm" && message.author.id !== "202836483596353536") {
         return;
     }
-    if (message.content === "ping") {
+    if (message.content.toLowerCase() === "ping" && message.author.id !== "202836483596353536") {
         return message.channel.send('Pong sale chien ');
     }
-    if (message.content === "non") {
-        return message.channel.send('bril fdp ');
+    if (message.content.toLowerCase() === "non" && message.author.id !== "202836483596353536") {
+        return message.channel.send('bril');
     }
     if (!message.content.startsWith(ConfigFile.config.prefix)) {
         return;
     }
-    handleCommand(message);
+
     if (message.author.id === "272103724263014401") {
         var random = Math.floor(Math.random() * 5);
         switch (random) {
@@ -51,10 +51,12 @@ client.on("message", (message) => {
                 message.reply("t'es un boss damien");
                 break;
             case 4:
-                message.reply("t'es VRAIMENT un dieu damien");
+                message.reply("APEX quand damien?");
                 break;
         }
     }
+    handleCommand(message);
+   
 });
 function handleCommand(message) {
     return __awaiter(this, void 0, void 0, function* () {
