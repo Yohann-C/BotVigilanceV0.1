@@ -37,7 +37,7 @@ client.on("message", (message) => {
       return;
   }
   if (message.content.toLowerCase() === "ping" && message.author.id !== "202836483596353536") {
-      return message.channel.send('Pong sale chien ');
+      return message.channel.send('Pong');
   }
   if (message.content.toLowerCase() === "non" && message.author.id !== "202836483596353536") {
       return message.channel.send('bril');
