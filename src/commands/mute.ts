@@ -43,7 +43,7 @@ export default class mute implements IBotCommand {
             return;
         }
         messageObject.guild.member(mentionedUser).setMute(true)
-        messageObject.channel.send(`Le membre ${mentionedUser} à été mute avec succés, ferme un peu ta gueule`)
+        messageObject.channel.send(`Le membre ${mentionedUser} à été mute avec succés`)
             .then(console.log)
             .catch(console.error)
     }
