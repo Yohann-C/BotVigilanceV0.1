@@ -42,7 +42,7 @@ export default class ban implements IBotCommand {
             return;
         }
         messageObject.guild.member(mentionedUser).ban(banLog)
-        messageObject.channel.send(`Le membre ${mentionedUser} à été ban avec succés casse toi sale chien`)
+        messageObject.channel.send(`Le membre ${mentionedUser} à été ban avec succés !`)
             .then(console.log)
             .catch(console.error)
     }
