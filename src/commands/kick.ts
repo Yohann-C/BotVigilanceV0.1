@@ -48,7 +48,7 @@ export default class kick implements IBotCommand {
 
         // Kick le membre et ajoute la raison dans les log
         messageObject.guild.member(mentionedUser).kick(kickLog)
-        messageObject.channel.send(`Le membre ${mentionedUser} à été kick avec succés bye bye chacal`)
+        messageObject.channel.send(`Le membre ${mentionedUser} à été kick avec succés !`)
             .then(console.log)
             .catch(console.error)
     }
